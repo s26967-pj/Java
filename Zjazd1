@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Witaj  Łukaszu!");
+        Zadanie1();
+        Zadanie2();
+        Zadanie3();
+        Zadanie4();
+
+    }
+
+
+    public static void Zadanie1() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj pierwszy i drugi bok a policze ci pole prostokata ");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int result = a * b;
+        System.out.println(result);
+
+    }
+
+    public static void Zadanie2() {
+
+        System.out.println("Program wyświetla nam pierwiastek z liczby pi");
+        System.out.printf("Sqrt(Pi) = " + "%2.2f\n", Math.sqrt(Math.PI));
+
+
+    }
+
+    public static void Zadanie3() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Musisz podac pierwsze i drugie słowo");
+        String slowo1 = scan.nextLine();
+        String slowo2 = scan.nextLine();
+        System.out.println(slowo2 + " " + slowo1);
+    }
+
+    public static void Zadanie4() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj 3 boki trojkata");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        
+
+    }
+}
