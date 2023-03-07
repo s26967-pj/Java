@@ -5,7 +5,10 @@ public class Main {
         Zadanie1();
         Zadanie2();
         Zadanie3();
-        Zadanie4();
+         Zadanie4();
+       
+        Zadanie6();
+
 
     }
 
@@ -37,12 +40,88 @@ public class Main {
     }
 
     public static void Zadanie4() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Podaj 3 boki trojkata");
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int c = scan.nextInt();
-        
+        Scanner input = new Scanner(System.in);
+            System.out.println("Poprosze o podanie boku a: ");
+            double a = input.nextDouble();
+            System.out.println("Poprosze o podanie boku b: ");
+            double b = input.nextDouble();
+            System.out.println("Poprosze o podanie boku c: ");
+            double c = input.nextDouble();
+
+            if (a + b > c && a + c > b && b + c > a) {
+                System.out.println("Można zbudować trójkąt");
+            } else {
+                System.out.println("BŁĄD.");
+            }
+        }
+
+  
+
+    public static void Zadanie6() {
+            Scanner scanner = new Scanner(System.in);
+
+
+            System.out.print("Podaj pierwszą liczbę: ");
+            double liczba1 = scanner.nextDouble();
+
+            System.out.print("Podaj drugą liczbę: ");
+            double liczba2 = scanner.nextDouble();
+
+            System.out.print("Podaj trzecią liczbę: ");
+            double liczba3 = scanner.nextDouble();
+
+
+            if (liczba1 <= liczba2 && liczba1 <= liczba3) {
+                System.out.print(liczba1 + ", ");
+                if (liczba2 <= liczba3) {
+                    System.out.print(liczba2 + ", " + liczba3);
+                } else {
+                    System.out.print(liczba3 + ", " + liczba2);
+                }
+            } else if (liczba2 <= liczba1 && liczba2 <= liczba3) {
+                System.out.print(liczba2 + ", ");
+                if (liczba1 <= liczba3) {
+                    System.out.print(liczba1 + ", " + liczba3);
+                } else {
+                    System.out.print(liczba3 + ", " + liczba1);
+                }
+            } else {
+                System.out.print(liczba3 + ", ");
+                if (liczba1 <= liczba2) {
+                    System.out.print(liczba1 + ", " + liczba2);
+                } else {
+                    System.out.print(liczba2 + ", " + liczba1);
+                }
+            }
+
+
+            System.out.print("\n");
+            if (liczba1 >= liczba2 && liczba1 >= liczba3) {
+                System.out.print(liczba1 + ", ");
+                if (liczba2 >= liczba3) {
+                    System.out.print(liczba2 + ", " + liczba3);
+                } else {
+                    System.out.print(liczba3 + ", " + liczba2);
+                }
+            } else if (liczba2 >= liczba1 && liczba2 >= liczba3) {
+                System.out.print(liczba2 + ", ");
+                if (liczba1 >= liczba3) {
+                    System.out.print(liczba1 + ", " + liczba3);
+                } else {
+                    System.out.print(liczba3 + ", " + liczba1);
+                }
+            } else {
+                System.out.print(liczba3 + ", ");
+                if (liczba1 >= liczba2) {
+                    System.out.print(liczba1 + ", " + liczba2);
+                } else {
+                    System.out.print(liczba2 + ", " + liczba1);
+                }
+            }
+        }
+
 
     }
-}
+
+
+
