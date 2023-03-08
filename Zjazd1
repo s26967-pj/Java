@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Witaj  Łukaszu!");
@@ -14,6 +15,7 @@ public class Main {
         //Zadanie9();
         //Zadanie10();
         //Zadanie11();
+        Zadanie12();
     }
 
 
@@ -329,5 +331,41 @@ Scanner input = new Scanner(System.in);
             }
         }
         return true;
+ 
+    }
+    public static void Zadanie12() {
+     Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj wiek w sekundach:");
+        double wiekSekundy = scanner.nextDouble();
+
+        System.out.println("Podaj planetę:");
+        String planeta = scanner.next();
+
+        double wiekLata = obliczWiekNaPlanecie(wiekSekundy, planeta);
+        System.out.printf("Wiek na planecie %s: %.2f lata", planeta, wiekLata);
+
+        scanner.close();
+    }
+
+    private static double obliczWiekNaPlanecie(double wiekSekundy, String planeta) {
+        double wiekLataZiemskie = wiekSekundy / 31557600;
+
+        Map<String, Double> obroty = new HashMap<>();
+        obroty.put("Merkury", 0.2408467);
+        obroty.put("Wenus", 0.61519726);
+        obroty.put("Ziemia", 1.0);
+        obroty.put("Mars", 1.8808158);
+        obroty.put("Jowisz", 11.862615);
+        obroty.put("Saturn", 29.447498);
+        obroty.put("Uran", 84.016846);
+        obroty.put("Neptun", 164.79132);
+
+        if (obroty.containsKey(planeta)) {
+            double obrotLataZiemskie = obroty.get(planeta);
+            return wiekLataZiemskie / obrotLataZiemskie;
+        } else {
+            throw new IllegalArgumentException("Nieznana planeta: " + planeta);
+        }
     }
 }
