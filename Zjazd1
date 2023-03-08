@@ -132,13 +132,13 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
 
 
-            System.out.print("Podaj pierwszą liczbę: ");
+            System.out.print("Proszę o podanie 1 liczby: ");
             double liczba1 = scanner.nextDouble();
 
-            System.out.print("Podaj drugą liczbę: ");
+            System.out.print("Proszę o podanie 2 liczby: ");
             double liczba2 = scanner.nextDouble();
 
-            System.out.print("Podaj trzecią liczbę: ");
+            System.out.print("Proszę o podanie 3 liczby: ");
             double liczba3 = scanner.nextDouble();
 
 
@@ -194,10 +194,10 @@ public class Main {
   public static void Zadanie7() {
 Scanner input = new Scanner(System.in);
 
-        System.out.print("Podaj liczbę elementów w tablicy A: ");
+        System.out.print("Podaj liczbę elementów pierwszej tablicy: ");
         int n = input.nextInt();
 
-        System.out.print("Podaj liczbę elementów w tablicy B: ");
+        System.out.print("Podaj liczbę elementów drugiej tablicy: ");
         int m = input.nextInt();
 
         if (n <= 0 || m <= 0) {
@@ -208,12 +208,12 @@ Scanner input = new Scanner(System.in);
         int[] A = new int[n];
         int[] B = new int[m];
 
-        System.out.println("Wprowadź elementy tablicy A:");
+        System.out.println("Wprowadź elementy tablicy pierwszej:");
         for (int i = 0; i < n; i++) {
             A[i] = input.nextInt();
         }
 
-        System.out.println("Wprowadź elementy tablicy B:");
+        System.out.println("Wprowadź elementy tablicy drugiej:");
         for (int i = 0; i < m; i++) {
             B[i] = input.nextInt();
         }
@@ -233,7 +233,7 @@ Scanner input = new Scanner(System.in);
         do {
             System.out.print("Podaj liczbę naturalną n: ");
             while (!scanner.hasNextInt()) {
-                System.out.println("To nie jest liczba naturalna. Spróbuj ponownie.");
+                System.out.println("To nie jest liczba naturalna ;)" );
                 scanner.next();
             }
             n = scanner.nextInt();
@@ -256,7 +256,7 @@ Scanner input = new Scanner(System.in);
     
     public static void Zadanie9() {
           Scanner scanner = new Scanner(System.in);
-        System.out.println("Wpisz slowo: ");
+        System.out.println("Podaj slowo: ");
         String word = scanner.nextLine();
         if (isPalindrome(word)) {
             System.out.println("TAK");
@@ -366,7 +366,7 @@ Scanner input = new Scanner(System.in);
             double obrotLataZiemskie = obroty.get(planeta);
             return wiekLataZiemskie / obrotLataZiemskie;
         } else {
-            throw new IllegalArgumentException("Nieznana planeta: " + planeta);
+            throw new IllegalArgumentException("Niema takiej planety: " + planeta);
         }
     }
     
