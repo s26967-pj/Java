@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Witaj  Łukaszu!");
@@ -11,7 +12,8 @@ public class Main {
         //Zadanie7();
         //Zadanie8();
         //Zadanie9();
-        Zadanie10();
+        //Zadanie10();
+        //Zadanie11();
     }
 
 
@@ -302,12 +304,30 @@ Scanner input = new Scanner(System.in);
             System.out.println();
         }
     }
-    
-    
+    public static void Zadanie11() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wprowadź tekst:");
+        String text = scanner.nextLine().toLowerCase(); 
+        boolean isPangram = checkIfPangram(text);
+        System.out.println(isPangram);
+    }
+
+    public static boolean checkIfPangram(String text) {
+        boolean[] alphabet = new boolean[26];
+        int index;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c >= 'a' && c <= 'z') { 
+                index = c - 'a'; 
+                alphabet[index] = true; 
+            }
+        }
+        
+        for (boolean b : alphabet) {
+            if (!b) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
-    
-    
-    
-
-
-
