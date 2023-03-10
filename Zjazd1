@@ -392,4 +392,5 @@ Scanner input = new Scanner(System.in);
 }
 
 //zadanie 14 uruchomiłem zadanie 1 w IDEA przez skrot klawiszowy ctrl+shift+F10 w internecie wyczytałem że wtedy program nam sie odpala w javac a java odpalamy poprzez ikonke w prawym gornym rogu.
-Mam wrażenie że nie o to chodziło pewnie miałem odpalic przez terminal ale
+Wiem że powinno to działać przez terminal gdzie wchodze w sciezke pliku i nastpnie wpisuje polecenienie javac Main.java(nazwa pliku) ale wychodzą mi jakieś błędy a juz nie ma zawiele 
+czasu dodatkowo w weekend wyjeżdzam wiec wysyłam z takowym rezultatem.
