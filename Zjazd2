@@ -205,7 +205,67 @@ public class Main {
 }
 
 
+   public static void Zadanie9() {
+        char poprawnaOdpowiedz = 'M';
+        System.out.print("Wciśnij klawisz z zakresu od A do Z: ");
 
+        try {
+            char odpowiedz = (char) System.in.read();
+            odpowiedz = Character.toUpperCase(odpowiedz);
+
+            if (odpowiedz == poprawnaOdpowiedz) {
+                System.out.println("Dobrze!");
+            } else if (odpowiedz < poprawnaOdpowiedz) {
+                System.out.println("Źle! Za nisko. Spróbuj jeszcze raz.");
+            } else {
+                System.out.println("Źle! Za wysoko. Spróbuj jeszcze raz.");
+            }
+        } catch (IOException e) {
+            System.out.println("Wystąpił błąd wejścia/wyjścia: " + e.getMessage());
+        }
+
+    }
+
+
+    public static void Zadanie10() {
+        for (int i = 0; i <= 14; i++) {
+            int potega = (int) Math.pow(2, i);
+            System.out.println("2 do potęgi " + i + " wynosi = " + potega);
+        }
+    }
+
+    public class DefaultValues2{
+        static class Vehicle {
+            int passengers; // liczba pasażerów
+            int fuelcap; // pojemność zbiornika paliwa w litrach
+            double lkm; // zużycie paliwa na 100km
+
+            // Konstruktor klasy Vehicle
+            Vehicle(int p, int f, double l) {
+                passengers = p;
+                fuelcap = f;
+                lkm = l;
+            }
+
+            // Metoda obliczająca zasięg pojazdu
+            double range() {
+                return fuelcap / (lkm / 100);
+            }
+        }
+
+        static class VehicleProg {
+            public static void Zadanie11() {
+                // Tworzenie dwóch obiektów typu Vehicle
+                Vehicle miniVan = new Vehicle(7, 50, 10);
+                Vehicle sportsCar = new Vehicle(2, 30, 15);
+
+                // Obliczanie i wyświetlanie zasięgu obu pojazdów
+                System.out.println("Zasięg minivana wynosi " + miniVan.range() + " km");
+                System.out.println("Zasięg samochodu sportowego wynosi " + sportsCar.range() + " km");
+            }
+        }
+
+    }
 
 
 
