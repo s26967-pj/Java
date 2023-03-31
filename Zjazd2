@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.*;
@@ -12,10 +13,10 @@ public class Main {
         //Zadanie5();
         //Zadanie6();
         //Zadanie7();
-        Zadanie8();
+        //Zadanie8();
         //Zadanie9();
         //Zadanie10();
-        //Zadanie11();
+        Zadanie11();
         //Zadanie12();
         //Zadanie13();
     }
@@ -204,8 +205,7 @@ public class Main {
         System.out.println(P + "\t" + Q + "\t" + (P && Q) + "\t" + (P || Q) + "\t" + (P ^ Q) + "\t" + !P);
 }
 
-
-   public static void Zadanie9() {
+    public static void Zadanie9() {
         char poprawnaOdpowiedz = 'M';
         System.out.print("Wciśnij klawisz z zakresu od A do Z: ");
 
@@ -233,56 +233,48 @@ public class Main {
             System.out.println("2 do potęgi " + i + " wynosi = " + potega);
         }
     }
+    public static void Zadanie11() {
+    Vehicle myCar = new Vehicle(5, 70.0, 8);
+    double myCarRange = myCar.calculateRange();
+        System.out.println("The car's range is " + myCarRange + " km.");
 
-    public class DefaultValues2{
-        static class Vehicle {
-            int passengers; // liczba pasażerów
-            int fuelcap; // pojemność zbiornika paliwa w litrach
-            double lkm; // zużycie paliwa na 100km
+    Vehicle miniVan = new Vehicle(9, 100.0, 10.0);
+    Vehicle sportsCar = new Vehicle(2, 60.0, 15.0);
+    double miniVanRange = miniVan.calculateRange();
+    double sportsCarRange = sportsCar.calculateRange();
 
-            // Konstruktor klasy Vehicle
-            Vehicle(int p, int f, double l) {
-                passengers = p;
-                fuelcap = f;
-                lkm = l;
-            }
+    int roundedRangeM = (int) Math.round(miniVanRange);
+    int roundedRangeS = (int) Math.round(sportsCarRange);
+        System.out.println("MiniVan range: " + roundedRangeM + " km");
+        System.out.println("SportsCar range: " + roundedRangeS + " km");
+}
+}
 
-            // Metoda obliczająca zasięg pojazdu
-            double range() {
-                return fuelcap / (lkm / 100);
-            }
-        }
+class Vehicle {
+    private int passengers;
+    private double fuelCapacity;
+    private double fuelConsumption;
 
-        static class VehicleProg {
-            public static void Zadanie11() {
-                // Tworzenie dwóch obiektów typu Vehicle
-                Vehicle miniVan = new Vehicle(7, 50, 10);
-                Vehicle sportsCar = new Vehicle(2, 30, 15);
-
-                // Obliczanie i wyświetlanie zasięgu obu pojazdów
-                System.out.println("Zasięg minivana wynosi " + miniVan.range() + " km");
-                System.out.println("Zasięg samochodu sportowego wynosi " + sportsCar.range() + " km");
-            }
-        }
-
+    public Vehicle(int passengers, double fuelCapacity, double fuelConsumption) {
+        this.passengers = passengers;
+        this.fuelCapacity = fuelCapacity;
+        this.fuelConsumption = fuelConsumption;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public double calculateRange() {
+        double range = fuelCapacity / fuelConsumption * 100;
+        return range;
+    }
 }
+
+
+
+
+
+
+
+
+
 
 
 
